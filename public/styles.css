@@ -1,0 +1,595 @@
+/* ══════════════════════════════════════════════════════
+   Public Support Form — Canovate Brand Styles
+   ══════════════════════════════════════════════════════ */
+
+/* ── Reset & Base ────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --canovate-red: #CD0001;
+  --canovate-red-dark: #a80001;
+  --canovate-red-light: #e03030;
+  --canovate-red-glow: rgba(205, 0, 1, 0.15);
+
+  --dark-charcoal: #1A191D;
+  --off-black: #242424;
+  --mid-grey: #666666;
+  --light-grey: #F3F3F3;
+  --border-grey: #E3E3E3;
+  --white: #FFFFFF;
+
+  --success: #2e8b57;
+  --success-glow: rgba(46, 139, 87, 0.12);
+  --error: #CD0001;
+  --error-bg: #fef2f2;
+
+  --card-bg: var(--white);
+  --card-border: var(--border-grey);
+
+  --text: var(--dark-charcoal);
+  --text-secondary: var(--mid-grey);
+  --text-muted: #999999;
+
+  --input-bg: var(--white);
+  --input-border: var(--border-grey);
+  --input-focus-border: var(--canovate-red);
+  --input-focus-glow: var(--canovate-red-glow);
+
+  --radius: 0px;
+  --radius-sm: 0px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--light-grey);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Top Banner (Canovate brand strip) ───────────────── */
+.brand-banner {
+  width: 100%;
+  background: var(--dark-charcoal);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo .logo-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.brand-logo .logo-text span {
+  color: var(--canovate-red);
+}
+
+.brand-banner .brand-contact {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.82rem;
+  color: #aaa;
+}
+
+.brand-contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.brand-contact a:hover {
+  color: var(--white);
+}
+
+/* ── Page Header (under banner) ──────────────────────── */
+.page-header {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 3px solid var(--canovate-red);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-nav a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: color var(--transition);
+}
+
+.page-nav a:hover,
+.page-nav a.active {
+  color: var(--canovate-red);
+}
+
+.page-nav .breadcrumb {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.page-nav .breadcrumb span {
+  color: var(--canovate-red);
+  font-weight: 600;
+}
+
+/* ── Form Container ──────────────────────────────────── */
+.form-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 740px;
+  padding: 40px 20px 60px;
+}
+
+/* ── Card Styles ─────────────────────────────────────── */
+.form-card,
+.success-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 48px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  animation: cardEnter 0.4s ease both;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Form Header ─────────────────────────────────────── */
+.form-header {
+  text-align: left;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--canovate-red);
+}
+
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--canovate-red);
+  border-radius: var(--radius);
+  color: white;
+  margin-bottom: 16px;
+}
+
+.form-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--dark-charcoal);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* ── Form Layout ─────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark-charcoal);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.form-group:focus-within label {
+  color: var(--canovate-red);
+}
+
+.required {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* ── Inputs ──────────────────────────────────────────── */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: all var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:hover,
+textarea:hover {
+  border-color: #ccc;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-glow);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Validation States ───────────────────────────────── */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(205, 0, 1, 0.1);
+}
+
+.form-group.error label {
+  color: var(--error);
+}
+
+.error-msg {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--error);
+  margin-top: 4px;
+  min-height: 18px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all var(--transition);
+}
+
+.form-group.error .error-msg {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Character Counter ───────────────────────────────── */
+.char-counter {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Submit Button (Canovate red, square) ────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 14px 35px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: var(--canovate-red);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.submit-btn:hover {
+  background: var(--canovate-red-dark);
+  box-shadow: 0 4px 16px var(--canovate-red-glow);
+}
+
+.submit-btn:active {
+  transform: scale(0.995);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn.secondary {
+  background: transparent;
+  border: 2px solid var(--border-grey);
+  color: var(--text-secondary);
+  margin-top: 24px;
+}
+
+.submit-btn.secondary:hover {
+  border-color: var(--canovate-red);
+  color: var(--canovate-red);
+}
+
+/* ── Loading Spinner ─────────────────────────────────── */
+.btn-loader {
+  display: none;
+  animation: spin 1s linear infinite;
+}
+
+.submit-btn.loading .btn-text {
+  opacity: 0;
+}
+
+.submit-btn.loading .btn-loader {
+  display: inline-block;
+  position: absolute;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Success Card ────────────────────────────────────── */
+.success-card {
+  text-align: center;
+  padding: 56px 48px;
+}
+
+.success-card.hidden {
+  display: none;
+}
+
+.success-icon-wrap {
+  margin-bottom: 28px;
+}
+
+.success-checkmark {
+  width: 72px;
+  height: 72px;
+}
+
+.checkmark-circle {
+  stroke: var(--success);
+  stroke-width: 2;
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: strokeCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  stroke: var(--success);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: strokeCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+}
+
+@keyframes strokeCircle {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes strokeCheck {
+  100% { stroke-dashoffset: 0; }
+}
+
+.success-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-charcoal);
+  margin-bottom: 12px;
+}
+
+.success-msg {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.ticket-ref {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--success-glow);
+  border: 1px solid rgba(46, 139, 87, 0.2);
+  border-radius: var(--radius);
+  padding: 18px 32px;
+  margin-bottom: 20px;
+}
+
+.ref-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ref-id {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--success);
+  letter-spacing: 0.02em;
+}
+
+.success-note {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  body {
+    padding: 0;
+  }
+
+  .form-card,
+  .success-card {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lang-selector {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .brand-banner {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  .brand-banner .brand-contact {
+    display: none;
+  }
+
+  .page-header {
+    padding: 0 16px;
+    height: 44px;
+  }
+}
+
+/* ── Language Selector ───────────────────────────────── */
+.lang-selector {
+  display: flex;
+  align-items: center;
+}
+
+.lang-selector select {
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--white);
+  border: 1.5px solid var(--border-grey);
+  border-radius: var(--radius);
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition);
+  width: auto;
+  min-width: 130px;
+}
+
+.lang-selector select option {
+  background: var(--white);
+  color: var(--text);
+  padding: 8px;
+}
+
+.lang-selector select:hover {
+  border-color: var(--canovate-red);
+}
+
+.lang-selector select:focus {
+  border-color: var(--canovate-red);
+  box-shadow: 0 0 0 3px var(--canovate-red-glow);
+}
+
+/* ── RTL (Arabic) Support ────────────────────────────── */
+body.rtl .form-card,
+body.rtl .success-card {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .form-header {
+  text-align: right;
+}
+
+body.rtl .success-card {
+  text-align: center;
+}
+
+body.rtl .char-counter {
+  text-align: left;
+}
+
+body.rtl .lang-selector {
+  direction: ltr;
+}
+
+body.rtl .error-msg {
+  text-align: right;
+}
